@@ -25,9 +25,15 @@
 var NAVTREE =
 [
   [ "Ramy-3D-Printed-Robotic-Arm", "index.html", [
-    [ "Ramy-6-DOF-3D-Printed-Robotic-Arm(IN PROGRESS)", "index.html", "index" ],
+    [ "Ramy 6-DOF 3D Printed Robotic Arm", "index.html", "index" ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];

@@ -1,8 +1,24 @@
 var NAVTREEINDEX0 =
 {
 "_ramy_robotic_arm_code_8cpp.html":[1,0,0,0],
+"_ramy_robotic_arm_code_8cpp.html#a0230bc3c5208cc29f365e182539edd17":[1,0,0,0,0],
+"_ramy_robotic_arm_code_8cpp.html#a2c06cc8f85429bb0f7cb91917164dc54":[1,0,0,0,10],
+"_ramy_robotic_arm_code_8cpp.html#a458215e61949d9180bc820b5eff66d0b":[1,0,0,0,1],
+"_ramy_robotic_arm_code_8cpp.html#a488ae19df6c7a57aa5a8ce5449684dfe":[1,0,0,0,5],
+"_ramy_robotic_arm_code_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d":[1,0,0,0,4],
+"_ramy_robotic_arm_code_8cpp.html#a85a8845fe00c84d878696fe71ada10ad":[1,0,0,0,11],
+"_ramy_robotic_arm_code_8cpp.html#ac06a6c3e35e6959cfe61ab48fc5d8bb9":[1,0,0,0,6],
+"_ramy_robotic_arm_code_8cpp.html#aca81a08363d798348d62c2b82cc6e563":[1,0,0,0,9],
+"_ramy_robotic_arm_code_8cpp.html#ad31bf638fa76c373b5e8a49d66c4bb9f":[1,0,0,0,7],
+"_ramy_robotic_arm_code_8cpp.html#ad8b453f1fd48a79e14e1c58cbb8efad0":[1,0,0,0,2],
+"_ramy_robotic_arm_code_8cpp.html#af46892462cc7c03a39d3898aa111e3d9":[1,0,0,0,8],
+"_ramy_robotic_arm_code_8cpp.html#afe461d27b9c48d5921c00d521181f12f":[1,0,0,0,3],
 "dir_c19ef42e26ff26b16d7b0c88138718d8.html":[1,0,0],
 "files.html":[1,0],
+"globals.html":[1,1,0],
+"globals_defs.html":[1,1,3],
+"globals_func.html":[1,1,1],
+"globals_vars.html":[1,1,2],
 "index.html":[],
 "index.html":[0],
 "index.html#autotoc_md1":[0,0],
@@ -13,5 +29,6 @@ var NAVTREEINDEX0 =
 "index.html#autotoc_md6":[0,4],
 "index.html#autotoc_md7":[0,5],
 "index.html#autotoc_md8":[0,5,0],
+"index.html#autotoc_md9":[0,6],
 "pages.html":[]
 };

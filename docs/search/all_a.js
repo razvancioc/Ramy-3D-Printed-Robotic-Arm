@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['learned_0',['Hardware Challenges &amp;amp; Lessons Learned',['../index.html#autotoc_md7',1,'']]],
-  ['lessons_20learned_1',['Hardware Challenges &amp;amp; Lessons Learned',['../index.html#autotoc_md7',1,'']]]
+  ['issue_0',['The 360° vs. 180° Servo Motor Issue',['../index.html#autotoc_md8',1,'']]]
 ];

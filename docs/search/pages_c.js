@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['of_20materials_20tbd_0',['Hardware (Bill of Materials - TBD)',['../index.html#autotoc_md4',1,'']]]
+  ['learned_0',['Hardware Challenges &amp;amp; Lessons Learned',['../index.html#autotoc_md7',1,'']]],
+  ['lessons_20learned_1',['Hardware Challenges &amp;amp; Lessons Learned',['../index.html#autotoc_md7',1,'']]]
 ];

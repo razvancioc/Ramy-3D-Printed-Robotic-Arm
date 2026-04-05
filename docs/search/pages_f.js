@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['schematic_0',['Hardware Schematic',['../index.html#autotoc_md5',1,'']]],
-  ['servo_20motor_20issue_1',['The 360° vs. 180° Servo Motor Issue',['../index.html#autotoc_md8',1,'']]],
-  ['software_2',['Software',['../index.html#autotoc_md6',1,'']]],
-  ['status_3',['Current Status',['../index.html#autotoc_md3',1,'']]],
-  ['study_20kinematics_4',['Motion Study &amp;amp; Kinematics',['../index.html#autotoc_md2',1,'']]]
+  ['plans_3a_20electronics_20enclosure_0',['Future Plans: Electronics Enclosure',['../index.html#autotoc_md9',1,'']]],
+  ['printed_20robotic_20arm_1',['Ramy 6-DOF 3D Printed Robotic Arm',['../index.html',1,'']]],
+  ['project_2',['About the Project',['../index.html#autotoc_md1',1,'']]]
 ];

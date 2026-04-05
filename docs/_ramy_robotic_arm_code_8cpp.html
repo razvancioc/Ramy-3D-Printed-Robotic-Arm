@@ -91,6 +91,247 @@ $(function(){initNavTree('_ramy_robotic_arm_code_8cpp.html','',''); });
   <div class="headertitle"><div class="title">RamyRoboticArmCode.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><code>#include &lt;Wire.h&gt;</code><br />
+<code>#include &lt;Adafruit_PWMServoDriver.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ad8b453f1fd48a79e14e1c58cbb8efad0" id="r_ad8b453f1fd48a79e14e1c58cbb8efad0"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ad8b453f1fd48a79e14e1c58cbb8efad0">SERVO_MIN</a>&#160;&#160;&#160;125</td></tr>
+<tr class="memdesc:ad8b453f1fd48a79e14e1c58cbb8efad0"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM pulse length for 0 degrees (varies by servo brand, usually 100-150 out of 4096).  <br /></td></tr>
+<tr class="memitem:a458215e61949d9180bc820b5eff66d0b" id="r_a458215e61949d9180bc820b5eff66d0b"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a458215e61949d9180bc820b5eff66d0b">SERVO_MAX</a>&#160;&#160;&#160;575</td></tr>
+<tr class="memdesc:a458215e61949d9180bc820b5eff66d0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">PWM pulse length for 180 degrees (varies by servo brand, usually 500-600 out of 4096).  <br /></td></tr>
+<tr class="memitem:a0230bc3c5208cc29f365e182539edd17" id="r_a0230bc3c5208cc29f365e182539edd17"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a0230bc3c5208cc29f365e182539edd17">SERVO_COUNT</a>&#160;&#160;&#160;6</td></tr>
+<tr class="memdesc:a0230bc3c5208cc29f365e182539edd17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total number of servos in the robotic arm.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d" id="r_a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
+<tr class="memdesc:a4fc01d736fe50cf5b977f755b675f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial configuration of serial communication, I2C, and motor home positions.  <br /></td></tr>
+<tr class="memitem:afe461d27b9c48d5921c00d521181f12f" id="r_afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
+<tr class="memdesc:afe461d27b9c48d5921c00d521181f12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main execution loop. Reads inputs, calculates new angles, and updates servos.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a2c06cc8f85429bb0f7cb91917164dc54" id="r_a2c06cc8f85429bb0f7cb91917164dc54"><td class="memItemLeft">Adafruit_PWMServoDriver&#160;</td><td class="memItemRight"><a class="el" href="#a2c06cc8f85429bb0f7cb91917164dc54">pwm</a> = Adafruit_PWMServoDriver(0x40)</td></tr>
+<tr class="memdesc:a2c06cc8f85429bb0f7cb91917164dc54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the PCA9685 driver with the default I2C address (0x40).  <br /></td></tr>
+<tr class="memitem:a85a8845fe00c84d878696fe71ada10ad" id="r_a85a8845fe00c84d878696fe71ada10ad"><td class="memItemLeft">const int&#160;</td><td class="memItemRight"><a class="el" href="#a85a8845fe00c84d878696fe71ada10ad">servoPorts</a> [<a class="el" href="#a0230bc3c5208cc29f365e182539edd17">SERVO_COUNT</a>] = {0, 1, 2, 3, 4, 5}</td></tr>
+<tr class="memdesc:a85a8845fe00c84d878696fe71ada10ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">PCA9685 channels connected to the servos.  <br /></td></tr>
+<tr class="memitem:aca81a08363d798348d62c2b82cc6e563" id="r_aca81a08363d798348d62c2b82cc6e563"><td class="memItemLeft">const int&#160;</td><td class="memItemRight"><a class="el" href="#aca81a08363d798348d62c2b82cc6e563">joyPins</a> [<a class="el" href="#a0230bc3c5208cc29f365e182539edd17">SERVO_COUNT</a>] = {32, 33, 34, 35, 36, 39}</td></tr>
+<tr class="memdesc:aca81a08363d798348d62c2b82cc6e563"><td class="mdescLeft">&#160;</td><td class="mdescRight">ESP32 Analog Input Pins for the 3 joysticks (X and Y axes).  <br /></td></tr>
+<tr class="memitem:ac06a6c3e35e6959cfe61ab48fc5d8bb9" id="r_ac06a6c3e35e6959cfe61ab48fc5d8bb9"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#ac06a6c3e35e6959cfe61ab48fc5d8bb9">currentAngles</a> [<a class="el" href="#a0230bc3c5208cc29f365e182539edd17">SERVO_COUNT</a>] = {90.0, 90.0, 90.0, 90.0, 90.0, 90.0}</td></tr>
+<tr class="memdesc:ac06a6c3e35e6959cfe61ab48fc5d8bb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the current angle for each servo to allow incremental movement.  <br /></td></tr>
+<tr class="memitem:a488ae19df6c7a57aa5a8ce5449684dfe" id="r_a488ae19df6c7a57aa5a8ce5449684dfe"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a488ae19df6c7a57aa5a8ce5449684dfe">armSpeed</a> = 1.5</td></tr>
+<tr class="memdesc:a488ae19df6c7a57aa5a8ce5449684dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Degrees to move per loop iteration when the joystick is pushed.  <br /></td></tr>
+<tr class="memitem:af46892462cc7c03a39d3898aa111e3d9" id="r_af46892462cc7c03a39d3898aa111e3d9"><td class="memItemLeft">const int&#160;</td><td class="memItemRight"><a class="el" href="#af46892462cc7c03a39d3898aa111e3d9">deadzoneLow</a> = 1750</td></tr>
+<tr class="memdesc:af46892462cc7c03a39d3898aa111e3d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lower threshold of the joystick deadzone.  <br /></td></tr>
+<tr class="memitem:ad31bf638fa76c373b5e8a49d66c4bb9f" id="r_ad31bf638fa76c373b5e8a49d66c4bb9f"><td class="memItemLeft">const int&#160;</td><td class="memItemRight"><a class="el" href="#ad31bf638fa76c373b5e8a49d66c4bb9f">deadzoneHigh</a> = 2050</td></tr>
+<tr class="memdesc:ad31bf638fa76c373b5e8a49d66c4bb9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upper threshold of the joystick deadzone.  <br /></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a id="a0230bc3c5208cc29f365e182539edd17" name="a0230bc3c5208cc29f365e182539edd17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0230bc3c5208cc29f365e182539edd17">&#9670;&#160;</a></span>SERVO_COUNT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SERVO_COUNT&#160;&#160;&#160;6</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Total number of servos in the robotic arm. </p>
+
+</div>
+</div>
+<a id="a458215e61949d9180bc820b5eff66d0b" name="a458215e61949d9180bc820b5eff66d0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a458215e61949d9180bc820b5eff66d0b">&#9670;&#160;</a></span>SERVO_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SERVO_MAX&#160;&#160;&#160;575</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM pulse length for 180 degrees (varies by servo brand, usually 500-600 out of 4096). </p>
+
+</div>
+</div>
+<a id="ad8b453f1fd48a79e14e1c58cbb8efad0" name="ad8b453f1fd48a79e14e1c58cbb8efad0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8b453f1fd48a79e14e1c58cbb8efad0">&#9670;&#160;</a></span>SERVO_MIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SERVO_MIN&#160;&#160;&#160;125</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PWM pulse length for 0 degrees (varies by servo brand, usually 100-150 out of 4096). </p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="afe461d27b9c48d5921c00d521181f12f" name="afe461d27b9c48d5921c00d521181f12f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&#160;</a></span>loop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loop </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main execution loop. Reads inputs, calculates new angles, and updates servos. </p>
+
+</div>
+</div>
+<a id="a4fc01d736fe50cf5b977f755b675f11d" name="a4fc01d736fe50cf5b977f755b675f11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc01d736fe50cf5b977f755b675f11d">&#9670;&#160;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setup </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initial configuration of serial communication, I2C, and motor home positions. </p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
+<a id="a488ae19df6c7a57aa5a8ce5449684dfe" name="a488ae19df6c7a57aa5a8ce5449684dfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a488ae19df6c7a57aa5a8ce5449684dfe">&#9670;&#160;</a></span>armSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float armSpeed = 1.5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Degrees to move per loop iteration when the joystick is pushed. </p>
+
+</div>
+</div>
+<a id="ac06a6c3e35e6959cfe61ab48fc5d8bb9" name="ac06a6c3e35e6959cfe61ab48fc5d8bb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac06a6c3e35e6959cfe61ab48fc5d8bb9">&#9670;&#160;</a></span>currentAngles</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float currentAngles[<a class="el" href="#a0230bc3c5208cc29f365e182539edd17">SERVO_COUNT</a>] = {90.0, 90.0, 90.0, 90.0, 90.0, 90.0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stores the current angle for each servo to allow incremental movement. </p>
+
+</div>
+</div>
+<a id="ad31bf638fa76c373b5e8a49d66c4bb9f" name="ad31bf638fa76c373b5e8a49d66c4bb9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31bf638fa76c373b5e8a49d66c4bb9f">&#9670;&#160;</a></span>deadzoneHigh</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int deadzoneHigh = 2050</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Upper threshold of the joystick deadzone. </p>
+
+</div>
+</div>
+<a id="af46892462cc7c03a39d3898aa111e3d9" name="af46892462cc7c03a39d3898aa111e3d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af46892462cc7c03a39d3898aa111e3d9">&#9670;&#160;</a></span>deadzoneLow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int deadzoneLow = 1750</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lower threshold of the joystick deadzone. </p>
+
+</div>
+</div>
+<a id="aca81a08363d798348d62c2b82cc6e563" name="aca81a08363d798348d62c2b82cc6e563"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca81a08363d798348d62c2b82cc6e563">&#9670;&#160;</a></span>joyPins</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int joyPins[<a class="el" href="#a0230bc3c5208cc29f365e182539edd17">SERVO_COUNT</a>] = {32, 33, 34, 35, 36, 39}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ESP32 Analog Input Pins for the 3 joysticks (X and Y axes). </p>
+<p>*</p><dl class="section note"><dt>Note</dt><dd>ESP32 ADC is 12-bit, meaning joystick values will range from 0 to 4095. </dd></dl>
+
+</div>
+</div>
+<a id="a2c06cc8f85429bb0f7cb91917164dc54" name="a2c06cc8f85429bb0f7cb91917164dc54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c06cc8f85429bb0f7cb91917164dc54">&#9670;&#160;</a></span>pwm</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver(0x40)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the PCA9685 driver with the default I2C address (0x40). </p>
+<ul>
+<li></li>
+</ul>
+
+</div>
+</div>
+<a id="a85a8845fe00c84d878696fe71ada10ad" name="a85a8845fe00c84d878696fe71ada10ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85a8845fe00c84d878696fe71ada10ad">&#9670;&#160;</a></span>servoPorts</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int servoPorts[<a class="el" href="#a0230bc3c5208cc29f365e182539edd17">SERVO_COUNT</a>] = {0, 1, 2, 3, 4, 5}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PCA9685 channels connected to the servos. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <div id="page-nav" class="page-nav-panel">
