@@ -16,7 +16,10 @@ This repository documents the assembly, build process, and programming of a 6 De
   </a>
 </p>
 
-Check the Media folder to see more photos with the fully assembled Robotic Arm.
+<p align="center">
+  <b>Check the <a href="">Media</a> folder to see more photos with the fully assembled Robotic Arm.</b>
+</p>
+
 
 ## About the Project
 The 3D printed parts are based on an excellent open-source model found on [MakerWorld](https://makerworld.com/en/models/2466519-3d-robotic-arm?from=search). To better understand the kinematics and prepare for the programming phase, I imported and fully assembled the components in **Autodesk Fusion 360**, where I also conducted a motion study.
